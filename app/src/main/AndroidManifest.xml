@@ -14,6 +14,15 @@
         android:theme="@style/Theme.DEEDHacks2023"
         tools:targetApi="31">
         <activity
+            android:name=".ZinniaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NikitaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AliyahActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
