@@ -21,6 +21,10 @@ public class AliyahActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aliyah);
 
         Button btn = findViewById(R.id.button_a);
+        Button eatCakeBtn = findViewById(R.id.eatCakeBtn);
+        Button partyHatBtn = findViewById(R.id.partyHatBtn);
+        eatCakeBtn.setVisibility(View.INVISIBLE);
+        partyHatBtn.setVisibility(View.INVISIBLE);
         SeekBar slider = findViewById(R.id.seekBar2);
         slider.setAlpha(0);
 
@@ -44,6 +48,10 @@ public class AliyahActivity extends AppCompatActivity {
                 box.setImageAlpha(0);
                 //SeekBar slider = findViewById(R.id.seekBar2);
                 slider.setAlpha(1);
+                Button eatCakeBtn = findViewById(R.id.eatCakeBtn);
+                Button partyHatBtn = findViewById(R.id.partyHatBtn);
+                eatCakeBtn.setVisibility(View.VISIBLE);
+                partyHatBtn.setVisibility(View.VISIBLE);
             }
         });
         slider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -73,6 +81,25 @@ public class AliyahActivity extends AppCompatActivity {
         });
 
 
+        eatCakeBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View eatCakeBtn) {
+                Intent i = NikitaActivity.makeLaunchIntent(
+                        AliyahActivity.this);
+                startActivity(i);
+            }
+        });
+
+
+        partyHatBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View partyHatBtn) {
+                Intent i = ZinniaActivity.makeLaunchIntent(
+                        AliyahActivity.this);
+                startActivity(i);
+            }
+
+        });
     }
 
     public static Intent makeLaunchIntent(Context context) {
