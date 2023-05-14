@@ -16,6 +16,12 @@ public class NikitaActivity extends AppCompatActivity {
         FEEDcount = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nikita);
+
+        ImageView fulldeedee=findViewById(R.id.imageView8);
+        fulldeedee.setVisibility(View.INVISIBLE);
+        ImageView crumbsdeedee=findViewById(R.id.imageView9);
+        crumbsdeedee.setVisibility(View.INVISIBLE);
+
         Button btn=findViewById(R.id.button);
         ImageView slice1=findViewById(R.id.imageView3);
         ImageView slice2=findViewById(R.id.imageView4);
@@ -31,10 +37,15 @@ public class NikitaActivity extends AppCompatActivity {
                 }
                 else if (FEEDcount == 2) {
                     slice3.setVisibility(View.INVISIBLE);
+                    fulldeedee.setVisibility(View.VISIBLE);
+                    crumbsdeedee.setVisibility(View.VISIBLE);
                 }
                 FEEDcount++;
             }
         });
+
+
+
     }
     public static Intent makeLaunchIntent(Context context) {
         Intent intent = new Intent(context, NikitaActivity.class);
